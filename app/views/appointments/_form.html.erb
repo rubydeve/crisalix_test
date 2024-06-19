@@ -1,0 +1,26 @@
+<%= form_for :appointment, url: appointments_url do |f| %>
+<%= f.hidden_field :doctor_id, value: params[:doctor] %>
+  <div class="row g-3">
+
+    <div class="col-sm-12">
+      <%= f.label :addition, "In addition, if you'd like to book a consultation, please choose whether you'd prefer In-Person or Video and your preferred date and time (optional):" %>
+      <%= f.select :addition, options_for_select([['In-Person', true], ['Video',false]], params[:addition]), {}, { class: 'form-select' } %>
+    </div>
+    
+    <div class="col-sm-12">
+      <%= f.label :question, 'Ask Question' %>
+      <%= f.text_area :question, class: "form-control", rows: 5 %>
+    </div>
+        <div class="col-md-12">
+      <%= f.label :date, 'Date/Time' %>
+      <%= f.text_field :date, class: "form-control" %>
+    </div>
+  </div>
+  <%= f.submit 'Create Appointment', class:"btn btn-primary btn-lg mt-3 ml-auto" %>
+<% end %>
+<script>
+$(document).on('ready', function () {
+      $('#appointment_date').datetimepicker();
+
+})
+</script>

@@ -1,0 +1,16 @@
+        
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Addition</th>
+      <th scope="col">Date</th>
+      <th scope="col">Question</th>
+      <th scope="col">Doctor</th>
+      <th scope="col">Patient</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render partial: '/appointments/appointment', collection: @appointments %>
+  </tbody>
+</table>

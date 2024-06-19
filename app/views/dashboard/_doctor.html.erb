@@ -1,0 +1,13 @@
+<div class="container my-5">
+  <div class="p-5 text-center bg-body-tertiary rounded-3">
+    <svg class="bi mt-4 mb-3" style="color: var(--bs-indigo);" width="100" height="100"><use xlink:href="#bootstrap"></use></svg>
+    <h1 class="text-body-emphasis">Latest 5 Appointments</h1>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="py-5 text-center">
+        <%= render partial: '/appointments/table' %>
+      </div>
+    </div>
+  </div>
+</div>

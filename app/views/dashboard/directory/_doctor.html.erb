@@ -1,0 +1,11 @@
+    
+<div class="d-flex text-body-secondary pt-3">
+  <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
+    <div class="d-flex justify-content-between">
+      <strong class="text-gray-dark"><%= doctor.name %></strong>
+      <%= render partial: '/shared/link', locals: {href: new_appointment_url(doctor: doctor), title: 'Book', css: 'btn btn-primary btn-lg'}%>
+    </div>
+    <span class="d-block"><%= doctor.email %></span>
+    <span class="d-block"><%= doctor.address %></span>
+  </div>
+</div>

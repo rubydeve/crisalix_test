@@ -1,0 +1,44 @@
+<main class="container">
+  <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary">
+    <div class="col-lg-6 px-0">
+      <h1 class="display-4 fst-italic">Find a Crisalix Surgeon</h1>
+    </div>
+  </div>
+  <div class="row mb-2">
+    <%= form_for :search, url: directory_url, method: :get do |f| %>
+      <div class="row g-3">
+        <div class="col-12">
+          <%= f.label :location, 'Location', class: 'form-label' %>
+          <%= f.text_field :location, class: 'form-control', placeholder: 'Location' %>
+        </div>
+        <div class="col-sm-6">
+          <%= f.label :name, 'Surgeon or clinic name ', class: 'form-label' %>
+          <%= f.text_field :name, class: 'form-control', placeholder: 'name' %>
+        </div>
+   
+        <div class="col-md-6">
+          <%= f.label :distance, 'Distance ', class: 'form-label' %>
+          <%= f.select :distance, options_for_select([['10km', '10'], ['100km',100], ['500km', 500]]), {}, { class: 'form-select' } %>
+        </div>
+        <div class="col-md-6">
+          <%= f.label :certificates, 'Certificates', class: 'form-label' %>
+          <%= f.select :certificates, options_for_select([['No', false], ['Yes',true]]), {}, { class: 'form-select' } %>
+        </div>
+        <div class="col-md-3 mt-auto">
+          <button class="w-100 btn btn-primary btn-lg" type="submit">Search</button>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="row g-5">
+    <div class="col-md-12">
+      <div class="my-3 p-3 bg-body rounded shadow-sm">
+        <h6 class="border-bottom pb-2 mb-0">Doctors List</h6>
+        <%= render partial: '/dashboard/directory/doctor', collection: @doctors %>
+        <small class="d-block text-end mt-3">
+            <%= will_paginate @doctors, renderer: BootstrapPaginateRenderer %>
+        </small>
+      </div>
+    </div>
+  </div>
+</main>

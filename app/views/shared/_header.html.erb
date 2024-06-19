@@ -1,0 +1,18 @@
+<div class="nav-scroller py-1 mb-3 border-bottom">
+  <nav class="nav nav-underline">
+    <% if current_user %>
+        <%= render partial: '/shared/link', locals: {href: dashboard_url, title: 'Dashboard'} %>
+        <%= render partial: '/shared/link', locals: {href: appointments_url, title: 'Appointments'} %>
+    <% else %>
+        <%= render partial: '/shared/link', locals: {href: root_url, title: 'Home'} %>
+    <% end %>
+    <div class="d-flex ms-auto my-auto align-items-center">
+        <% if current_user %>
+            <p class="link-secondary me-2 m-0" href="#">Login as: <%= current_user.try(:role) %></p>
+            <%= render partial: '/shared/link', locals: {href: logout_url, title: 'Sign out', css: "btn btn-sm btn-outline-secondary"} %>
+        <% else %>
+            <%= render partial: '/shared/link', locals: {href: login_url, title: 'Sign in', css: "btn btn-sm btn-outline-secondary"} %>
+        <% end %>
+    </div>
+  </nav>
+</div>

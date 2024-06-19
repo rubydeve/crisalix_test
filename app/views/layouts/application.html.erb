@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CrisalixTest</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application" %>
+    <script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNoILb2Qa6_Trfhlq0pjNqwaWN9vGMKJk&loading=async&libraries=places">
+    </script>
+    <%= javascript_include_tag "application" %>
+  </head>
+
+  <body>
+    <div class="container">
+      <%= render '/shared/header' %>
+      <%= yield %>
+    </div>
+    <%= toastr_flash %>
+    <% flash.discard %>
+
+  </body>
+</html>
