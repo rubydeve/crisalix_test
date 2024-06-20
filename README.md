@@ -4,6 +4,7 @@
 
 1. bundle install 
 2. rake db:create
+3. rails active_storage:install
 3. rake db:migrate
 4. rails s
 

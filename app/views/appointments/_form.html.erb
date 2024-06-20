@@ -11,9 +11,21 @@
       <%= f.label :question, 'Ask Question' %>
       <%= f.text_area :question, class: "form-control", rows: 5 %>
     </div>
-        <div class="col-md-12">
+    <div class="col-md-12">
       <%= f.label :date, 'Date/Time' %>
       <%= f.text_field :date, class: "form-control" %>
+    </div>
+    <div class="col-md-4">
+      <%= f.label :left, 'Left Image' %>
+      <%= f.file_field :left, class: "form-control" %>
+    </div>
+    <div class="col-md-4">
+      <%= f.label :front, 'Front Image' %>
+      <%= f.file_field :front, class: "form-control" %>
+    </div>
+    <div class="col-md-4">
+      <%= f.label :right, 'Right Image' %>
+      <%= f.file_field :right, class: "form-control" %>
     </div>
   </div>
   <%= f.submit 'Create Appointment', class:"btn btn-primary btn-lg mt-3 ml-auto" %>

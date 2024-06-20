@@ -6,4 +6,10 @@
   <td><%= appointment.question %></td>
   <td><%= appointment.doctor.name %></td>
   <td><%= appointment.patient.name %></td>
+  <td>
+    <%= image_tag appointment.left, width: "72", height: "57", class: 'm-2 rounded' %>
+    <%= image_tag appointment.front, width: "72", height: "57", class: 'm-2 rounded' %>
+    <%= image_tag appointment.right, width: "72", height: "57", class: 'm-2 rounded' %>
+  </td>
+
 </tr>
